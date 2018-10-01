@@ -1,0 +1,103 @@
+# ============================================================================
+# SECRETS
+# ============================================================================
+
+# Directories
+# (none - secrets are typically files)
+
+# Files
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+credentials.json
+src/secret.h
+src/credentials.h
+include/secret.h
+include/credentials.h
+
+# ============================================================================
+# ESP32 / PLATFORMIO
+# ============================================================================
+
+# Directories
+.pio/
+.pioenvs/
+.piolibdeps/
+build/
+lib_deps/
+.piocache/
+.pio_cache/
+pio_cache/
+
+# Files
+*.bin
+*.elf
+*.map
+*.hex
+*.eep
+*.lss
+*.sym
+*.a
+*.so
+*.dylib
+*.dll
+
+# ============================================================================
+# AI TOOLS
+# ============================================================================
+
+# Directories
+.claude/
+.gemini/
+.antigravity/
+.opencode/
+.cursor/
+
+# Files
+CLAUDE.md
+CLAUDE.local.md
+GEMINI.md
+.aider
+.aider.conf.yml
+opencode.json
+
+# ============================================================================
+# EDITORS
+# ============================================================================
+
+# Directories
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# Files
+*.swp
+*.swo
+*~
+*.code-workspace
+*.iml
+
+# ============================================================================
+# OS
+# ============================================================================
+
+# Files
+.DS_Store
+Thumbs.db
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+
+# ============================================================================
+# TEMPORARY AND LOGS
+# ============================================================================
+
+# Files
+*.tmp
+*.temp
+*.bak
+*.backup
+*.log
