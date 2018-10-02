@@ -1,11 +1,12 @@
-# ESP32 Firmware
+# ESP32 BMP280 Environmental Monitor
 
-ESP32 project built with PlatformIO and a Makefile wrapper.
+IoT project that reads temperature, atmospheric pressure, and altitude from a BMP280 sensor via ESP32, serving readings through the serial monitor.
 
 [![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
 
 ## Highlights
 
+- Real-time temperature, pressure, and altitude monitoring via BMP280 sensor
 - WiFi connectivity with signal strength reporting and weak-signal warnings
 - Serial output for debugging and monitoring at 115200 baud
 - Memory usage reporting (free heap) for reliability monitoring
@@ -13,7 +14,18 @@ ESP32 project built with PlatformIO and a Makefile wrapper.
 ## Prerequisites
 
 - **ESP32 development board** with USB-to-Serial capability
+- **BMP280 sensor** (I2C address 0x76)
 - **PlatformIO** — install with `make install-pio`
+- Jumper wires for I2C connection
+
+## Hardware Setup
+
+```
+ESP32 Pin 21 (SDA) ──────────── BMP280 SDA
+ESP32 Pin 22 (SCL) ──────────── BMP280 SCL
+ESP32 3.3V ──────────────────── BMP280 VCC
+ESP32 GND ──────────────────── BMP280 GND
+```
 
 ## Installation
 
@@ -42,9 +54,10 @@ make monitor
 Output at 115200 baud:
 
 ```
-ESP32 starting...
+ESP32 BMP280 Weather Station starting...
 WiFi connected to YourNetwork
 IP address: 192.168.1.100
+Sensor readings - Temperature: 23.5°C, Pressure: 1013.2 hPa, Altitude: 0.0 m
 ```
 
 ## Configuration
@@ -76,7 +89,7 @@ cp .env.example .env
 ```
 src/                    # Firmware source (main.cpp, secret.h.template)
 .make/                  # Build helper scripts
-platformio.ini          # Board configuration
+platformio.ini          # Board and library configuration
 Makefile                # Build orchestration targets
 .env.example            # Port and speed overrides template
 ```
@@ -105,6 +118,12 @@ make erase        # Erase ESP32 flash memory
 
 - Verify SSID and password in `src/secret.h`
 - Check signal strength in serial output (should be > -70 dBm)
+
+### BMP280 Sensor Errors
+
+- Verify I2C wiring: SDA=GPIO21, SCL=GPIO22
+- Confirm sensor I2C address is 0x76
+- Ensure 3.3V power supply to sensor
 
 ## License
 
