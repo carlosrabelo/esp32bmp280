@@ -6,6 +6,7 @@ ESP32 project built with PlatformIO and a Makefile wrapper.
 
 ## Highlights
 
+- WiFi connectivity with signal strength reporting and weak-signal warnings
 - Serial output for debugging and monitoring at 115200 baud
 - Memory usage reporting (free heap) for reliability monitoring
 
@@ -28,6 +29,22 @@ cp src/secret.h.template src/secret.h
 # Edit src/secret.h with your WiFi credentials
 make flash       # Build and upload
 make monitor     # View serial output
+```
+
+## Usage
+
+### Serial Monitor
+
+```bash
+make monitor
+```
+
+Output at 115200 baud:
+
+```
+ESP32 starting...
+WiFi connected to YourNetwork
+IP address: 192.168.1.100
 ```
 
 ## Configuration
@@ -83,6 +100,11 @@ make erase        # Erase ESP32 flash memory
 
 - Check USB cable supports data transfer
 - Press and hold BOOT button during upload if required
+
+### WiFi Connection Issues
+
+- Verify SSID and password in `src/secret.h`
+- Check signal strength in serial output (should be > -70 dBm)
 
 ## License
 
