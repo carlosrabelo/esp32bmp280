@@ -24,11 +24,26 @@ cd esp32bmp280
 ## Quick Start
 
 ```bash
+cp src/secret.h.template src/secret.h
+# Edit src/secret.h with your WiFi credentials
 make flash       # Build and upload
 make monitor     # View serial output
 ```
 
 ## Configuration
+
+### WiFi Credentials
+
+```bash
+cp src/secret.h.template src/secret.h
+```
+
+Edit `src/secret.h`:
+
+```cpp
+const char* ssid = "your-ssid";
+const char* password = "your-password";
+```
 
 ### ESP32 Port
 
@@ -42,7 +57,7 @@ cp .env.example .env
 ## Project Layout
 
 ```
-src/                    # Firmware source
+src/                    # Firmware source (main.cpp, secret.h.template)
 .make/                  # Build helper scripts
 platformio.ini          # Board configuration
 Makefile                # Build orchestration targets
