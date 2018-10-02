@@ -6,6 +6,8 @@ void setup() {
 
     Serial.println();
     Serial.println("ESP32 starting...");
+    Serial.print("Free heap: ");
+    Serial.println(ESP.getFreeHeap());
 }
 
 void loop() {

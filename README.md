@@ -4,6 +4,11 @@ ESP32 project built with PlatformIO and a Makefile wrapper.
 
 [![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
 
+## Highlights
+
+- Serial output for debugging and monitoring at 115200 baud
+- Memory usage reporting (free heap) for reliability monitoring
+
 ## Prerequisites
 
 - **ESP32 development board** with USB-to-Serial capability
