@@ -96,6 +96,7 @@ cp .env.example .env
 ```
 src/                    # Firmware source (main.cpp, secret.h.template)
 .make/                  # Build helper scripts
+.vscode/                # Editor recommendations (PlatformIO IDE)
 platformio.ini          # Board and library configuration
 Makefile                # Build orchestration targets
 .env.example            # Port and speed overrides template
