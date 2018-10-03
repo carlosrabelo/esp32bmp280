@@ -1,12 +1,13 @@
 # ESP32 BMP280 Environmental Monitor
 
-IoT project that reads temperature, atmospheric pressure, and altitude from a BMP280 sensor via ESP32, serving readings through the serial monitor.
+IoT project that reads temperature, atmospheric pressure, and altitude from a BMP280 sensor via ESP32, serving readings through a built-in web interface and serial monitor.
 
 [![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
 
 ## Highlights
 
 - Real-time temperature, pressure, and altitude monitoring via BMP280 sensor
+- Built-in web server with responsive dashboard accessible from any browser
 - WiFi connectivity with signal strength reporting and weak-signal warnings
 - Serial output for debugging and monitoring at 115200 baud
 - Memory usage reporting (free heap) for reliability monitoring
@@ -44,6 +45,10 @@ make monitor     # View serial output
 ```
 
 ## Usage
+
+### Web Interface
+
+After connecting to WiFi, the ESP32 starts a web server on port 80. Open `http://<ESP32-IP>/` in a browser to see temperature, pressure, and altitude readings.
 
 ### Serial Monitor
 
